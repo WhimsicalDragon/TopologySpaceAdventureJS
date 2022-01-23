@@ -5,5 +5,47 @@ document.getElementById("backMain").style.top = 250 + "px"
 
 fixBackground()
 
-setInterval(() => {moveDown();},50)
+
+var upInt
+var downInt
+var leftInt
+var downInt
+var keyMap = new Map()
+
+keyMap.set("Down", true)
+
+document.addEventListener('keydown', function(event) {
+
+    switch(event.key) {
+        case "ArrowDown":
+            break
+        case "ArrowUp":
+            if(keyMap.get("Down") == false) {            
+
+                keyMap.set("Down", true)
+                setInterval(() => {moveUp();},50)
+            } else {
+                break
+            }
+        case "ArrowLeft":
+            break
+        case "ArrowRight":
+                break   
+    }
+
+});
+
+document.addEventListener('keyup', function(event) {
+    switch(event.key) {
+        case "ArrowDown":
+            break
+        case "ArrowUp":
+            setInterval(() => {moveUp();},50)
+            break
+        case "ArrowLeft":
+            break
+        case "ArrowRight":
+                break   
+    }
+});
 
