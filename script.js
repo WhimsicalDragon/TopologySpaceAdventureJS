@@ -16,9 +16,7 @@ var left = false;
 var right = false;
 
 function animate() {
-    requestAnimationFrame(animate)
-    //console.log(ship)
-    //console.log(up, down, left, right)
+
     if (up && right) {
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
@@ -70,43 +68,48 @@ function animate() {
     }
 }
 
-animate()
 
 addEventListener('keydown', function (event) {
     event.preventDefault();
-    //console.log(event.key);
+
     if (event.key === "ArrowDown" || event.key === "s") {
         down = true;
+        animate()
     }
     if (event.key === "ArrowUp" || event.key === "w") {
         up = true;
+        animate()
     }
     if (event.key === "ArrowLeft" || event.key === "a") {
         left = true;
+        animate()
     }
     if (event.key === "ArrowRight" || event.key === "d") {
         right = true;
+        animate()
     }
     if (event.key === " ") {
-       // console.log('space')
+
     }
+
 });
 
 /*Listening for if one of the keys is released*/
 addEventListener('keyup', function (event) {
-    event.preventDefault();
-    //console.log(event.key);
     if (event.key === "ArrowDown" || event.key == "s") {
         down = false;
+        animate()
     }
     if (event.key === "ArrowUp" || event.key == "w") {
         up = false;
+        animate()
     }
     if (event.key === "ArrowLeft" || event.key == "a") {
         left = false;
+        animate()
     }
     if (event.key === "ArrowRight" || event.key == "d") {
         right = false;
+        animate()
     }
-    //console.log(up, down, left, right)
 });
