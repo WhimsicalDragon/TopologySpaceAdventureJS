@@ -2,8 +2,8 @@ var xPos
 var yPos
 
 
-function moveLeft() {
 
+function moveLeft() {
     xPos = parseInt(document.getElementById("backMain").style.left)
 
     if(xPos + 10 > 500) {
@@ -16,7 +16,6 @@ function moveLeft() {
 }
 
 function moveRight() {
-
     var xPos = parseInt(document.getElementById("backMain").style.left)
 
     if(xPos - 10 < 0) {
@@ -28,7 +27,6 @@ function moveRight() {
 }
 
 function moveDown() {
-
     yPos = parseInt(document.getElementById("backMain").style.top)
 
     if(yPos - 10 < 0) {
@@ -40,7 +38,6 @@ function moveDown() {
 }
 
 function moveUp() {
-
     yPos = parseInt(document.getElementById("backMain").style.top)
 
     if(yPos + 10 > 500) {
@@ -118,6 +115,23 @@ function fixBackground() {
         document.getElementById("back4").style.top = yPos - 250 + "px"
 
     }
+
+    fixEnemy()
+}
+
+
+function fixEnemy() {
+    document.getElementById("enemy").style.left = parseInt(document.getElementById("backMain").style.left) + 10 + "px"
+    document.getElementById("enemy").style.top = parseInt(document.getElementById("backMain").style.top) + 10 + "px"
+
+    //document.getElementById("enemy2").style.left = parseInt(document.getElementById("back2").style.left) + 10 + "px"
+    //document.getElementById("enemy2").style.top = parseInt(document.getElementById("back2").style.top) + 10 + "px"
+
+    //document.getElementById("enemy3").style.left = parseInt(document.getElementById("back3").style.left) + 10 + "px"
+    //document.getElementById("enemy3").style.top = parseInt(document.getElementById("back3").style.top) + 10 + "px"
+
+    //document.getElementById("enemy4").style.left = parseInt(document.getElementById("back4").style.left) + 10 + "px"
+    //document.getElementById("enemy4").style.top = parseInt(document.getElementById("back4").style.top) + 10 + "px"
 }
 
 fixBackground()

@@ -71,10 +71,9 @@
 
 #enemy {
     position:absolute;
-    top: 275px;
-    left: 275px;
     width: 25px;
 }
+
 
 #playingField {
     position: absolute;

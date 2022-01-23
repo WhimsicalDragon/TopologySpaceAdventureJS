@@ -3,8 +3,6 @@ import{moveDown,moveUp,moveRight,moveLeft,fixBackground} from './setBackground.j
 
 document.getElementById("backMain").style.left = "250px"
 document.getElementById("backMain").style.top = "250px"
-//document.getElementById("enemy").style.left= "275px"
-//document.getElementById("enemy").style.top = "275px"
 
 
 fixBackground()
@@ -222,7 +220,7 @@ addEventListener('keydown', function (event) {
         animate()
     }
     if (event.key === " ") {
-
+        destroyEnemy()
     }
 
 });
@@ -246,3 +244,13 @@ addEventListener('keyup', function (event) {
         animate()
     }
 });
+
+function destroyEnemy() {
+    if(parseInt(document.getElementById("enemy").style.top) > 250 && 
+       parseInt(document.getElementById("enemy").style.top) < 500 &&
+       parseInt(document.getElementById("enemy").style.left) > 250 &&
+       parseInt(document.getElementById("enemy").style.top) < 500) {
+
+        document.getElementById("enemy").style.display = "none"
+       }
+}
