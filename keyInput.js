@@ -5,7 +5,7 @@ document.getElementById("backMain").style.top = 250 + "px"
 
 fixBackground()
 
-
+/*
 var upInt
 var downInt
 var leftInt
@@ -21,7 +21,7 @@ keyMap.set("upInt",false)
 keyMap.set("leftInt",false)
 keyMap.set("rightInt",false)
 
-
+console.log(keyMap.get("rightInt"))
 
 document.addEventListener('keydown', function(event) {
 
@@ -173,4 +173,4 @@ document.addEventListener('keyup', function(event) {
                 break   
     }
 });
-
+*/
