@@ -128,7 +128,7 @@ function fixEnemy() {
 
 function fixPortal() {
     document.getElementById("portal").style.left = parseInt(document.getElementById("backMain").style.left) + 100 + "px"
-    document.getElementById("portal").style.top = parseInt(document.getElementById("backMain").style.top) + 100 + "px"
+    document.getElementById("portal").style.top = parseInt(document.getElementById("backMain").style.top) + 50 + "px"
 }
 
 

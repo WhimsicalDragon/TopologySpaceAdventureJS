@@ -79,13 +79,19 @@
     width: 75px;
 }
 
+#laser {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 
 #playingField {
     position: absolute;
     height: 250px;
     width: 250px;
     border-width: 250px;
-    border-color: greenyellow;
+    border-color: white;
     border-style: solid;
 }
 

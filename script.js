@@ -209,6 +209,9 @@ function animate() {
 }
 
 
+var destroyInt
+var activated = false
+
 addEventListener('keydown', function (event) {
     event.preventDefault();
 
@@ -229,10 +232,16 @@ addEventListener('keydown', function (event) {
         animate()
     }
     if (event.key === " ") {
-        destroyEnemy()
+        if (activated == false) {
+            console.log("BOOM!")
+            activated = true
+            destroyInt = setInterval(() => {destroyEnemy();},10)
+            setTimeout(() => {stopDestroy();},1000)
+        }
     }
 
 });
+
 
 /*Listening for if one of the keys is released*/
 addEventListener('keyup', function (event) {
@@ -254,7 +263,15 @@ addEventListener('keyup', function (event) {
     }
 });
 
+function stopDestroy() {
+    clearInterval(destroyInt)
+    document.getElementById("laser").style.top = "0px"
+    document.getElementById("laser").style.left = "0px"
+}
+
 function destroyEnemy() {
+    document.getElementById("laser").style.top = "250px"
+    document.getElementById("laser").style.left = "250px"
     if(parseInt(document.getElementById("enemy").style.top) > 250 && 
        parseInt(document.getElementById("enemy").style.top) < 500 &&
        parseInt(document.getElementById("enemy").style.left) > 250 &&
@@ -267,7 +284,7 @@ function destroyEnemy() {
 function portalCheck(uord) {
     if(parseInt(document.getElementById("portal").style.top) > 325 && 
        parseInt(document.getElementById("portal").style.top) < 375 &&
-       parseInt(document.getElementById("portal").style.left) > 310 &&
+       parseInt(document.getElementById("portal").style.left) > 305 &&
        parseInt(document.getElementById("portal").style.left) < 375) {
             if(uord = "up") {
                 document.getElementById("backMain").style.top = "500px"
