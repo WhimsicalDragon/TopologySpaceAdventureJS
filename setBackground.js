@@ -1,15 +1,6 @@
+var xPos
+var yPos
 
-//BackMain center
-//Back2
-//Back3
-//Back4
-
-//
-//<img src="images/DevBackground.png" id="back4" class="center">
-
-//Do not go over 375!!
-document.getElementById("backMain").style.left = 375 + "px"
-document.getElementById("backMain").style.top = 375 + "px"
 
 function moveLeft() {
 
@@ -26,7 +17,7 @@ function moveLeft() {
 
 function moveRight() {
 
-    xPos = parseInt(document.getElementById("backMain").style.left)
+    var xPos = parseInt(document.getElementById("backMain").style.left)
 
     if(xPos - 10 < 0) {
         xPos = xPos + 500
@@ -82,11 +73,14 @@ function moveDownRight() {
 }
 
 function fixBackground() {
+    var xPos
+    var yPos
+
     xPos = parseInt(document.getElementById("backMain").style.left)
     yPos = parseInt(document.getElementById("backMain").style.top)
 
-    xNeg = false
-    yNeg = false
+    var xNeg = false
+    var yNeg = false
 
     if (xPos < 250) {
         xNeg = true
@@ -124,10 +118,8 @@ function fixBackground() {
         document.getElementById("back4").style.top = yPos - 250 + "px"
 
     }
-
-    console.log(yPos)
-    console.log("Done!")
 }
 
 fixBackground()
-setInterval(() => {moveDownRight();},50)
+//setInterval(() => {moveDownRight();},50)
+export{moveDown,moveUp,moveRight,moveLeft,fixBackground,xPos,yPos}
