@@ -1,0 +1,36 @@
+#backMain {
+    position: absolute;
+}
+
+#back2 {
+    position: absolute;
+}
+
+#back3 {
+    position: absolute;
+}
+
+#back4 {
+    position: absolute;
+}
+
+#ship {
+    position:absolute;
+    top: 350px;
+    left: 350px;
+}
+
+#playingField {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-style: solid;
+    border-width: 250px;
+    border-color: greenyellow;
+}
+
+html,head,body,div {
+    margin: 0px;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
