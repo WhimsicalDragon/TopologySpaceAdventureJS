@@ -8,8 +8,57 @@
 //<img src="images/DevBackground.png" id="back4" class="center">
 
 //Do not go over 375!!
-document.getElementById("backMain").style.left = 375
-document.getElementById("backMain").style.top = 375
+document.getElementById("backMain").style.left = 375 + "px"
+document.getElementById("backMain").style.top = 375 + "px"
+
+function moveLeft() {
+
+    xPos = parseInt(document.getElementById("backMain").style.left)
+
+    if(xPos + 10 > 500) {
+        xPos = xPos - 500
+    }
+
+    document.getElementById("backMain").style.left = 10 + xPos + "px"
+
+    fixBackground()
+}
+
+function moveRight() {
+
+    xPos = parseInt(document.getElementById("backMain").style.left)
+
+    if(xPos - 10 < 0) {
+        xPos = xPos + 500
+    }
+
+    document.getElementById("backMain").style.left = xPos - 10 + "px"
+    fixBackground()
+}
+
+function moveDown() {
+
+    yPos = parseInt(document.getElementById("backMain").style.top)
+
+    if(yPos - 10 < 0) {
+        yPos = yPos + 500
+    }
+
+    document.getElementById("backMain").style.top = yPos - 10 + "px"
+    fixBackground()
+}
+
+function moveUp() {
+
+    yPos = parseInt(document.getElementById("backMain").style.top)
+
+    if(yPos + 10 > 500) {
+        yPos = yPos - 500
+    }
+
+    document.getElementById("backMain").style.top = yPos + 10 + "px"
+    fixBackground()
+}
 
 function fixBackground() {
     xPos = parseInt(document.getElementById("backMain").style.left)
@@ -56,6 +105,9 @@ function fixBackground() {
     }
 
     console.log(yPos)
+    console.log("Done!")
 }
 
 fixBackground()
+setInterval(() => {moveUp();},50)
+setInterval(() => {moveLeft();},50)
