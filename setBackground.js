@@ -117,22 +117,20 @@ function fixBackground() {
     }
 
     fixEnemy()
+    fixPortal()
 }
 
 
 function fixEnemy() {
     document.getElementById("enemy").style.left = parseInt(document.getElementById("backMain").style.left) + 10 + "px"
     document.getElementById("enemy").style.top = parseInt(document.getElementById("backMain").style.top) + 10 + "px"
-
-    //document.getElementById("enemy2").style.left = parseInt(document.getElementById("back2").style.left) + 10 + "px"
-    //document.getElementById("enemy2").style.top = parseInt(document.getElementById("back2").style.top) + 10 + "px"
-
-    //document.getElementById("enemy3").style.left = parseInt(document.getElementById("back3").style.left) + 10 + "px"
-    //document.getElementById("enemy3").style.top = parseInt(document.getElementById("back3").style.top) + 10 + "px"
-
-    //document.getElementById("enemy4").style.left = parseInt(document.getElementById("back4").style.left) + 10 + "px"
-    //document.getElementById("enemy4").style.top = parseInt(document.getElementById("back4").style.top) + 10 + "px"
 }
+
+function fixPortal() {
+    document.getElementById("portal").style.left = parseInt(document.getElementById("backMain").style.left) + 100 + "px"
+    document.getElementById("portal").style.top = parseInt(document.getElementById("backMain").style.top) + 100 + "px"
+}
+
 
 fixBackground()
 //setInterval(() => {moveDownRight();},50)

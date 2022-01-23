@@ -21,6 +21,9 @@ var uInt = false
 var lInt = false
 var rInt = false
 
+var porUp = false
+var porDown = false
+
 fixBackground()
 
 
@@ -120,10 +123,12 @@ function animate() {
         clearInterval(dInt)
         clearInterval(lInt)
         clearInterval(rInt)
+        clearInterval(porDown)
 
         dInt = false
         lInt = false
         rInt = false
+        porDown = false
 
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
@@ -133,6 +138,7 @@ function animate() {
 
         if(uInt == false) {
             uInt = setInterval(() => {moveUp();},50)
+            porUp = setInterval(() => {portalCheck("up");},10)
         }
 
 
@@ -140,10 +146,12 @@ function animate() {
         clearInterval(uInt)
         clearInterval(lInt)
         clearInterval(rInt)
+        clearInterval(porUp)
 
         uInt = false
         lInt = false
         rInt = false
+        porUp = false
 
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
@@ -153,6 +161,7 @@ function animate() {
 
         if(dInt == false) {
             dInt = setInterval(() => {moveDown();},50)
+            porDown = setInterval(() => {portalCheck("down");},10)
         }
 
 
@@ -249,8 +258,23 @@ function destroyEnemy() {
     if(parseInt(document.getElementById("enemy").style.top) > 250 && 
        parseInt(document.getElementById("enemy").style.top) < 500 &&
        parseInt(document.getElementById("enemy").style.left) > 250 &&
-       parseInt(document.getElementById("enemy").style.top) < 500) {
+       parseInt(document.getElementById("enemy").style.left) < 500) {
 
         document.getElementById("enemy").style.display = "none"
+       }
+}
+
+function portalCheck(uord) {
+    if(parseInt(document.getElementById("portal").style.top) > 325 && 
+       parseInt(document.getElementById("portal").style.top) < 375 &&
+       parseInt(document.getElementById("portal").style.left) > 310 &&
+       parseInt(document.getElementById("portal").style.left) < 375) {
+            if(uord = "up") {
+                document.getElementById("backMain").style.top = "500px"
+                fixBackground()
+            } else {
+                document.getElementById("backMain").style.top = "0px"
+                fixBackground()
+            }
        }
 }

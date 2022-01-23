@@ -74,6 +74,11 @@
     width: 25px;
 }
 
+#portal {
+    position: absolute;
+    width: 75px;
+}
+
 
 #playingField {
     position: absolute;
