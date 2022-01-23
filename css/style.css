@@ -1,0 +1,79 @@
+.up {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.up-right {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(45deg);
+}
+.right {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(90deg);
+}
+.down-right {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(135deg);
+}
+.down {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(180deg);
+}
+.down-left {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(225deg);
+}
+.left {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(270deg);
+}
+.up-left {
+    width: 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    transform: rotate(315deg);
+}
