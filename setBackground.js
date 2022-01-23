@@ -60,6 +60,27 @@ function moveUp() {
     fixBackground()
 }
 
+
+//These help avoid jitter, but I'll do them later
+function moveDownRight() {
+
+    yPos = parseInt(document.getElementById("backMain").style.top)
+
+    if(yPos - 10 < 0) {
+        yPos = yPos + 500
+    }
+
+    document.getElementById("backMain").style.top = yPos - 10 + "px"
+
+    if(xPos - 10 < 0) {
+        xPos = xPos + 500
+    }
+
+    document.getElementById("backMain").style.left = xPos - 10 + "px"
+
+    fixBackground()
+}
+
 function fixBackground() {
     xPos = parseInt(document.getElementById("backMain").style.left)
     yPos = parseInt(document.getElementById("backMain").style.top)
@@ -109,5 +130,4 @@ function fixBackground() {
 }
 
 fixBackground()
-setInterval(() => {moveUp();},50)
-setInterval(() => {moveLeft();},50)
+setInterval(() => {moveDownRight();},50)
