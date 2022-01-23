@@ -97,7 +97,7 @@ function fixBackground() {
         document.getElementById("back3").style.left = xPos + "px"
         document.getElementById("back3").style.top = 250 + yPos + "px"
     } else {
-        document.getElementById("back3").style.left = xPos
+        document.getElementById("back3").style.left = xPos + "px"
         document.getElementById("back3").style.top = yPos - 250 + "px"
     }
 

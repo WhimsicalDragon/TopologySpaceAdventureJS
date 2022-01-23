@@ -3,6 +3,9 @@ import{moveDown,moveUp,moveRight,moveLeft,fixBackground} from './setBackground.j
 
 document.getElementById("backMain").style.left = "250px"
 document.getElementById("backMain").style.top = "250px"
+//document.getElementById("enemy").style.left= "275px"
+//document.getElementById("enemy").style.top = "275px"
+
 
 fixBackground()
 
@@ -15,56 +18,186 @@ var up = false;
 var left = false;
 var right = false;
 
+var dInt = false
+var uInt = false
+var lInt = false
+var rInt = false
+
+fixBackground()
+
+
 function animate() {
 
     if (up && right) {
+        clearInterval(dInt)
+        clearInterval(lInt)
+
+        dInt = false
+        lInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('up-right')
+
+        if(uInt == false) {
+            uInt = setInterval(() => {moveUp();},50)
+        }
+
+        if(rInt == false) {
+            rInt = setInterval(() => {moveRight();},50)
+        }
+
+        
     } else if (up && left) {
+        clearInterval(rInt)
+        clearInterval(dInt)
+
+        dInt = false
+        rInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('up-left')
+      
+
+        if(uInt == false) {
+            uInt = setInterval(() => {moveUp();},50)
+        }
+
+        if(lInt == false) {
+            lInt = setInterval(() => {moveLeft();},50)
+        }
+
+
     } else if (down && right) {
+        clearInterval(uInt)
+        clearInterval(lInt)
+
+        uInt = false
+        lInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('down-right')
+
+        if(dInt == false) {
+            dInt = setInterval(() => {moveDown();},50)
+        }
+
+        if(rInt == false) {
+            rInt = setInterval(() => {moveRight();},50)
+        }
+
+
     } else if (down && left) {
+        clearInterval(uInt)
+        clearInterval(rInt)
+
+        uInt = false
+        rInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('down-left')
+
+        if(dInt == false) {
+            dInt = setInterval(() => {moveDown();},50)
+        }
+
+        if(lInt == false) {
+            lInt = setInterval(() => {moveLeft();},50)
+        }
+
+
+
     } else if (up) {
+        clearInterval(dInt)
+        clearInterval(lInt)
+        clearInterval(rInt)
+
+        dInt = false
+        lInt = false
+        rInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('up')
+
+        if(uInt == false) {
+            uInt = setInterval(() => {moveUp();},50)
+        }
+
+
     } else if (down) {
+        clearInterval(uInt)
+        clearInterval(lInt)
+        clearInterval(rInt)
+
+        uInt = false
+        lInt = false
+        rInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('down')
+
+        if(dInt == false) {
+            dInt = setInterval(() => {moveDown();},50)
+        }
+
+
     } else if (right) {
+        clearInterval(dInt)
+        clearInterval(uInt)
+        clearInterval(lInt)
+
+        dInt = false
+        uInt = false
+        lInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('right')
+
+        if(rInt == false) {
+            rInt = setInterval(() => {moveRight();},50)
+        }
+
+
     } else if (left) {
+        clearInterval(dInt)
+        clearInterval(uInt)
+        clearInterval(rInt)
+
+        dInt = false
+        uInt = false
+        rInt = false
+
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
             ship.classList.remove(ship.classList[i])
         }
         ship.classList.add('left')
+
+        if(lInt == false) {
+            lInt = setInterval(() => {moveLeft();},50)
+        }
+
+
     }
 }
 
