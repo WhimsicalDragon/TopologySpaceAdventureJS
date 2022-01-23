@@ -1,10 +1,13 @@
-const canvas = document.querySelector('canvas');
-var context = canvas.getContext('2d');
+import{moveDown,moveUp,moveRight,moveLeft,fixBackground} from './setBackground.js'
 
-canvas.width = innerWidth
-canvas.height = innerHeight
 
-const ship = document.body.children.item(2);
+document.getElementById("backMain").style.left = "250px"
+document.getElementById("backMain").style.top = "250px"
+
+fixBackground()
+
+var ship = document.getElementById("ship");
+var n
 
 /* Key maps */
 var down = false;
@@ -14,8 +17,8 @@ var right = false;
 
 function animate() {
     requestAnimationFrame(animate)
-    console.log(ship)
-    console.log(up, down, left, right)
+    //console.log(ship)
+    //console.log(up, down, left, right)
     if (up && right) {
         n = ship.classList.length
         for (let i = 0; i < n; i++) {
@@ -71,7 +74,7 @@ animate()
 
 addEventListener('keydown', function (event) {
     event.preventDefault();
-    console.log(event.key);
+    //console.log(event.key);
     if (event.key === "ArrowDown" || event.key === "s") {
         down = true;
     }
@@ -85,14 +88,14 @@ addEventListener('keydown', function (event) {
         right = true;
     }
     if (event.key === " ") {
-        console.log('space')
+       // console.log('space')
     }
 });
 
 /*Listening for if one of the keys is released*/
 addEventListener('keyup', function (event) {
     event.preventDefault();
-    console.log(event.key);
+    //console.log(event.key);
     if (event.key === "ArrowDown" || event.key == "s") {
         down = false;
     }
@@ -105,5 +108,5 @@ addEventListener('keyup', function (event) {
     if (event.key === "ArrowRight" || event.key == "d") {
         right = false;
     }
-    console.log(up, down, left, right)
+    //console.log(up, down, left, right)
 });

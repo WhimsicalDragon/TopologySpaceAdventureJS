@@ -1,79 +1,85 @@
 .up {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
 }
 .up-right {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(45deg);
 }
 .right {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(90deg);
 }
 .down-right {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(135deg);
 }
 .down {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(180deg);
 }
 .down-left {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(225deg);
 }
 .left {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(270deg);
 }
 .up-left {
-    width: 30px;
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
+    top: 350px;
+    left: 350px;
     transform: rotate(315deg);
 }
+
+
+#backMain {
+    position: absolute;
+}
+
+#back2 {
+    position: absolute;
+}
+
+#back3 {
+    position: absolute;
+}
+
+#back4 {
+    position: absolute;
+}
+
+#ship {
+    position:absolute;
+    top: 350px;
+    left: 350px;
+}
+
+#playingField {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-style: solid;
+    border-width: 250px;
+    border-color: greenyellow;
+}
+
+html,head,body,div {
+    margin: 0px;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
